@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace Version_1_C
 {
@@ -25,6 +24,8 @@ namespace Version_1_C
        
         public void DeleteWork(int prIndex)
         {
+            RemoveAt(prIndex);
+            /*
             if (prIndex >= 0 && prIndex < this.Count)
             {
                 if (MessageBox.Show("Are you sure?", "Deleting work", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -32,10 +33,14 @@ namespace Version_1_C
                     this.RemoveAt(prIndex);
                 }
             }
+            */
         }
         
         public void EditWork(int prIndex)
         {
+            clsWork lcWork = this[prIndex];
+            lcWork.EditDetails();
+            /*
             if (prIndex >= 0 && prIndex < this.Count)
             {
                 clsWork lcWork = (clsWork)this[prIndex];
@@ -45,6 +50,7 @@ namespace Version_1_C
             {
                 MessageBox.Show("Sorry no work selected #" + Convert.ToString(prIndex));
             }
+            */
         }
 
         public decimal GetTotalValue()

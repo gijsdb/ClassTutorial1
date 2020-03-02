@@ -44,9 +44,20 @@ namespace Version_1_C
             lcKey = Convert.ToString(lstArtists.SelectedItem);
             if (lcKey != null)
             {
-                _ArtistList.EditArtist(lcKey);
+                EditArtist(lcKey);
                 UpdateDisplay();
             }
+        }
+
+        public void EditArtist(string prKey)
+        {
+            clsArtist lcArtist;
+            lcArtist = _ArtistList[prKey];
+
+            if (lcArtist != null)
+                _ArtistList.EditArtist(lcArtist);
+            else
+                MessageBox.Show("Sorry no artist by this name");
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
