@@ -49,16 +49,18 @@ namespace Version_1_C
             // 
             // lblTotal
             // 
-            this.lblTotal.Location = new System.Drawing.Point(155, 233);
+            this.lblTotal.Location = new System.Drawing.Point(310, 448);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(72, 16);
+            this.lblTotal.Size = new System.Drawing.Size(144, 31);
             this.lblTotal.TabIndex = 27;
             // 
             // Label5
             // 
-            this.Label5.Location = new System.Drawing.Point(75, 233);
+            this.Label5.Location = new System.Drawing.Point(150, 448);
+            this.Label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(64, 16);
+            this.Label5.Size = new System.Drawing.Size(128, 31);
             this.Label5.TabIndex = 26;
             this.Label5.Text = "Total Value";
             // 
@@ -66,123 +68,139 @@ namespace Version_1_C
             // 
             this.optSort.Controls.Add(this.rbByDate);
             this.optSort.Controls.Add(this.rbByName);
-            this.optSort.Location = new System.Drawing.Point(99, 81);
+            this.optSort.Location = new System.Drawing.Point(198, 156);
+            this.optSort.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.optSort.Name = "optSort";
-            this.optSort.Size = new System.Drawing.Size(136, 48);
+            this.optSort.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.optSort.Size = new System.Drawing.Size(272, 92);
             this.optSort.TabIndex = 25;
             this.optSort.TabStop = false;
             this.optSort.Text = "Sort By";
             // 
             // rbByDate
             // 
-            this.rbByDate.Location = new System.Drawing.Point(80, 16);
+            this.rbByDate.Location = new System.Drawing.Point(160, 31);
+            this.rbByDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rbByDate.Name = "rbByDate";
-            this.rbByDate.Size = new System.Drawing.Size(48, 24);
+            this.rbByDate.Size = new System.Drawing.Size(96, 46);
             this.rbByDate.TabIndex = 1;
             this.rbByDate.Text = "Date";
             this.rbByDate.CheckedChanged += new System.EventHandler(this.rbByDate_CheckedChanged);
             // 
             // rbByName
             // 
-            this.rbByName.Location = new System.Drawing.Point(8, 16);
+            this.rbByName.Location = new System.Drawing.Point(16, 31);
+            this.rbByName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rbByName.Name = "rbByName";
-            this.rbByName.Size = new System.Drawing.Size(56, 24);
+            this.rbByName.Size = new System.Drawing.Size(112, 46);
             this.rbByName.TabIndex = 0;
             this.rbByName.Text = "Name";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(171, 257);
+            this.btnClose.Location = new System.Drawing.Point(342, 494);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(64, 32);
+            this.btnClose.Size = new System.Drawing.Size(128, 62);
             this.btnClose.TabIndex = 24;
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(91, 257);
+            this.btnDelete.Location = new System.Drawing.Point(182, 494);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(64, 32);
+            this.btnDelete.Size = new System.Drawing.Size(128, 62);
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(11, 257);
+            this.btnAdd.Location = new System.Drawing.Point(22, 494);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(64, 32);
+            this.btnAdd.Size = new System.Drawing.Size(128, 62);
             this.btnAdd.TabIndex = 22;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Label4
             // 
-            this.Label4.Location = new System.Drawing.Point(11, 121);
+            this.Label4.Location = new System.Drawing.Point(22, 233);
+            this.Label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(80, 16);
+            this.Label4.Size = new System.Drawing.Size(160, 31);
             this.Label4.TabIndex = 21;
             this.Label4.Text = "Works";
             // 
             // lstWorks
             // 
-            this.lstWorks.Location = new System.Drawing.Point(11, 137);
+            this.lstWorks.ItemHeight = 25;
+            this.lstWorks.Location = new System.Drawing.Point(22, 263);
+            this.lstWorks.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lstWorks.Name = "lstWorks";
-            this.lstWorks.Size = new System.Drawing.Size(224, 82);
+            this.lstWorks.Size = new System.Drawing.Size(444, 154);
             this.lstWorks.TabIndex = 20;
             this.lstWorks.DoubleClick += new System.EventHandler(this.lstWorks_DoubleClick);
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(75, 57);
+            this.txtPhone.Location = new System.Drawing.Point(150, 110);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(160, 20);
+            this.txtPhone.Size = new System.Drawing.Size(316, 31);
             this.txtPhone.TabIndex = 19;
             // 
             // Label3
             // 
-            this.Label3.Location = new System.Drawing.Point(11, 57);
+            this.Label3.Location = new System.Drawing.Point(22, 110);
+            this.Label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(64, 16);
+            this.Label3.Size = new System.Drawing.Size(128, 31);
             this.Label3.TabIndex = 18;
             this.Label3.Text = "Contact Ph";
             // 
             // txtSpeciality
             // 
-            this.txtSpeciality.Location = new System.Drawing.Point(75, 33);
+            this.txtSpeciality.Location = new System.Drawing.Point(150, 63);
+            this.txtSpeciality.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtSpeciality.Name = "txtSpeciality";
-            this.txtSpeciality.Size = new System.Drawing.Size(160, 20);
+            this.txtSpeciality.Size = new System.Drawing.Size(316, 31);
             this.txtSpeciality.TabIndex = 17;
             // 
             // Label2
             // 
-            this.Label2.Location = new System.Drawing.Point(11, 33);
+            this.Label2.Location = new System.Drawing.Point(22, 63);
+            this.Label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(64, 16);
+            this.Label2.Size = new System.Drawing.Size(128, 31);
             this.Label2.TabIndex = 16;
             this.Label2.Text = "Speciality";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(75, 9);
+            this.txtName.Location = new System.Drawing.Point(150, 17);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(160, 20);
+            this.txtName.Size = new System.Drawing.Size(316, 31);
             this.txtName.TabIndex = 15;
             // 
             // Label1
             // 
-            this.Label1.Location = new System.Drawing.Point(11, 9);
+            this.Label1.Location = new System.Drawing.Point(22, 17);
+            this.Label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(64, 16);
+            this.Label1.Size = new System.Drawing.Size(128, 31);
             this.Label1.TabIndex = 14;
             this.Label1.Text = "Name";
             // 
             // frmArtist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 299);
+            this.ClientSize = new System.Drawing.Size(512, 575);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.Label5);
             this.Controls.Add(this.optSort);
@@ -197,9 +215,10 @@ namespace Version_1_C
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.Label1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmArtist";
             this.Text = "frmArtist";
-            //this.Load += new System.EventHandler(this.frmArtist_Load);
+            this.Load += new System.EventHandler(this.frmArtist_Load);
             this.optSort.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

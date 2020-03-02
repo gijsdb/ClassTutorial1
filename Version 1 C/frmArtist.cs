@@ -15,58 +15,71 @@ namespace Version_1_C
             InitializeComponent();
         }
 
-        private clsArtistList theArtistList;
-        private clsWorksList theWorksList;
-        private byte sortOrder; // 0 = Name, 1 = Date
+        //private clsArtistList ArtistList;
+        private clsWorksList WorksList;
+        private byte _sortOrder; // 0 = Name, 1 = Date
+        private clsArtist _Artist;
 
         private void UpdateDisplay()
         {
             txtName.Enabled = txtName.Text == "";
-            if (sortOrder == 0)
+            if (_sortOrder == 0)
             {
-                theWorksList.SortByName();
+                WorksList.SortByName();
                 rbByName.Checked = true;
             }
             else
             {
-                theWorksList.SortByDate();
+                WorksList.SortByDate();
                 rbByDate.Checked = true;
             }
 
             lstWorks.DataSource = null;
-            lstWorks.DataSource = theWorksList;
-            lblTotal.Text = Convert.ToString(theWorksList.GetTotalValue());
+            lstWorks.DataSource = WorksList;
+            lblTotal.Text = Convert.ToString(WorksList.GetTotalValue());
         }
 
-        public void SetDetails(string prName, string prSpeciality, string prPhone, byte prSortOrder,
-                               clsWorksList prWorksList, clsArtistList prArtistList)
+        private void updateForm()
         {
-            txtName.Text = prName;
-            txtSpeciality.Text = prSpeciality;
-            txtPhone.Text = prPhone;
-            theArtistList = prArtistList;
-            theWorksList = prWorksList;
-            sortOrder = prSortOrder;
-            UpdateDisplay();
+            txtName.Text = _Artist.Name; //etc. same for all fields. Your turn:
+            txtSpeciality.Text = _Artist.Speciality;
+            txtPhone.Text = _Artist.Phone;
+            //ArtistList = _Artist.ArtistList;
+            WorksList = _Artist.WorksList;
         }
 
-        public void GetDetails(ref string prName, ref string prSpeciality, ref string prPhone, ref byte prSortOrder)
+        private void pushData() {
+            _Artist.Name = txtName.Text; //etc. same for all fields except for the lists! //Your turn:
+            _Artist.Speciality = txtSpeciality.Text;
+            _Artist.Phone = txtPhone.Text;
+        }
+
+        public void SetDetails(clsArtist prArtist) {
+            _Artist = prArtist;
+            updateForm();
+            UpdateDisplay();
+            ShowDialog();
+        }
+
+        /*
+        public void GetDetails(ref string prName, ref string prSpeciality, ref string prPhone)
         {
             prName = txtName.Text;
             prSpeciality = txtSpeciality.Text;
             prPhone = txtPhone.Text;
-            prSortOrder = sortOrder;
+            _sortOrder = WorksList.SortOrder;
         }
+        */
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            theWorksList.DeleteWork(lstWorks.SelectedIndex);
+            WorksList.DeleteWork(lstWorks.SelectedIndex);
             UpdateDisplay();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            theWorksList.AddWork();
+            WorksList.AddWork();
             UpdateDisplay();
         }
 
@@ -74,6 +87,7 @@ namespace Version_1_C
         {
             if (isValid())
             {
+                pushData();
                 DialogResult = DialogResult.OK;
             }
         }
@@ -81,7 +95,7 @@ namespace Version_1_C
         public virtual Boolean isValid()
         {
             if (txtName.Enabled && txtName.Text != "")
-                if (theArtistList.Contains(txtName.Text))
+                if (_Artist.IsDuplicate(txtName.Text))
                 {
                     MessageBox.Show("Artist with that name already exists!");
                     return false;
@@ -97,16 +111,20 @@ namespace Version_1_C
             int lcIndex = lstWorks.SelectedIndex;
             if (lcIndex >= 0)
             {
-                theWorksList.EditWork(lcIndex);
+                WorksList.EditWork(lcIndex);
                 UpdateDisplay();
             }
         }
 
         private void rbByDate_CheckedChanged(object sender, EventArgs e)
         {
-            sortOrder = Convert.ToByte(rbByDate.Checked);
+            _sortOrder = Convert.ToByte(rbByDate.Checked);
             UpdateDisplay();
         }
 
+        private void frmArtist_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
